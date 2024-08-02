@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block current_item %}
+md:text-yellow-400
+{% endblock %}
+
+{% block content %}
+
+        <div class="relative bg-gradient-to-r from-purple-600 to-blue-600 h-screen text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../static/img/hero.webp" alt="Background Image" class="object-cover object-center w-full h-full" />
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent from-70% to-black to-black-90%"></div>
+            </div>
+            
+            <div class="relative z-10 flex flex-col justify-center items-center h-full text-center antialiased">
+                <p class="tracking-widest font-semibold">WELCOME TO ENO TV</p>
+                <h1 class="text-5xl leading-tight mb-4">HOME OF <b>NON-STOP <br> ENTERTAINMENT</b></h1>
+                <a href="#" class="italic bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-md text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">WATCH FREE TRIAL</a>
+            </div>
+        </div>
+
+        <div class="w-full h-10 bg-black"></div>
+        <div class="relative h-screen text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../static/img/AvengersEndgame.webp" alt="Background Image" class="object-cover object-center w-full h-full" />
+                <div class="absolute inset-0">
+                    <div class="w-full h-1/2 bg-gradient-to-b from-black from-0% to-tranparent to-transparent-20%"></div>
+                    <div class="w-full h-1/2 bg-gradient-to-b from-transparent from-0% to-black to-black-90%"></div>
+                </div>
+            </div>
+            
+            <div class="relative z-10 flex flex-col justify-center h-full text-center md:text-left antialiased plus-jakarta-sans-200 px-8 md:px-24 lg:px-32">
+                <div class="max-w-lg">
+                    <p class="text-2xl font-bold leading-tight mb-4">Watch whatever you want, whenever you want.</p>
+                    <p class="mb-6">Discover captivating TV shows, blockbuster movies, and live events in our extensive content library.</p>
+                    <a href="#" class="font-bold inline-block italic bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-md text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">WATCH FREE MOVIES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-10 bg-black"></div>
+        <div class="relative h-screen text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../static/img/HOD.webp" alt="Background Image" class="object-cover object-center w-full h-full" />
+                <div class="absolute inset-0">
+                    <div class="w-full h-1/2 bg-gradient-to-b from-black from-0% to-tranparent to-transparent-20%"></div>
+                    <div class="w-full h-1/2 bg-gradient-to-b from-transparent from-0% to-black to-black-90%"></div>
+                </div>
+            </div>
+            
+            <div class="relative z-10 flex flex-col justify-center h-full text-left antialiased plus-jakarta-sans-200 px-8 md:px-24 lg:px-32">
+                <div class="md:ml-auto md:w-1/2 lg:w-2/5">
+                    <p class="text-2xl font-bold leading-tight mb-4">Explore over 50,000 contents from around the world.</p>
+                    <p class="mb-6">including popular networks like USA, HBO, beIN, FOX, and more. Enjoy a diverse range of content, from news and sports to entertainment and lifestyle.</p>
+                    <a href="#" class="font-bold inline-block italic bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-md text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">SUBSCRIBE NOW</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-10 bg-black"></div>
+        <div class="relative h-screen text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../static/img/PeakyBlindersBg.webp" alt="Background Image" class="object-cover object-center w-full h-full" />
+                <div class="absolute inset-0">
+                    <div class="w-full h-1/2 bg-gradient-to-b from-black from-0% to-tranparent to-transparent-20%"></div>
+                    <div class="w-full h-1/2 bg-gradient-to-b from-transparent from-0% to-black to-black-90%"></div>
+                </div>
+            </div>
+            
+            <div class="relative z-10 flex flex-col justify-center h-full text-center md:text-left antialiased plus-jakarta-sans-200 px-8 md:px-24 lg:px-32">
+                <div class="max-w-lg">
+                    <p class="text-2xl font-bold leading-tight mb-4">Dive into our vast collection of movies, series, and music.</p>
+                    <p class="mb-6">Find the latest releases, trending titles, and timeless classics. With genres ranging from action and comedy to drama and music, there's something for everyone.</p>
+                    <a href="#" class="font-bold inline-block italic bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-md text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">START FREE TRIAL</a>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
