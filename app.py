@@ -21,3 +21,6 @@ def browse_page():
 @app.route('/movies/<moviename>')
 def watch_page():
     return render_template('movie.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
