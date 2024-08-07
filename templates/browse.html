@@ -8,6 +8,87 @@
 md:text-yellow-400
 {% endblock %}
 
+{% block stylesheet %}
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+        gap: 15px; /* Adjust gap as needed */
+        padding: 0px 12px;
+    }
+    
+    @media (min-width: 375px) { /* Medium screens */
+        .title {
+            font-size: 0.875rem;
+        }
+        .tag {
+            font-size: 0.75rem;
+        }
+        a.tag {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+    
+    @media (min-width: 768px) { /* Medium screens */
+        .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 20px;
+        padding-left: 36px;
+        padding-right: 36px;
+        }
+        .title {
+            font-size: 1.5rem;
+        }
+        .tag {
+            font-size: 1.125rem;
+        }
+        a.tag {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .padding {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+    }
+    
+    @media (min-width: 992px) { /* Large screens */
+        .grid-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        padding-left: 96px;
+        padding-right: 96px;
+        }
+        .padding {
+            padding-left: 96px;
+            padding-right: 96px;
+        }
+    }
+
+    .rounded-lg {
+    position: relative; /* Necessary for absolute positioning of the gradient */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    }
+
+    .rounded-lg img {
+    position: relative;
+    border-radius: 5%;
+    }
+
+    .rounded-lg img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+    }
+
+</style>  
+{% endblock stylesheet%}
+
+
 {% block content %}
 
         <div class="relative h-screen text-white overflow-hidden bg-black">
@@ -27,7 +108,7 @@ md:text-yellow-400
 
         <div class="w-full h-10 bg-black"></div>
 
-        <div class="flex flex-col md:flex-row w-full items-center bg-black plus-jakarta-sans-200" style='gap:24px; padding: 0px 12px;'>
+        <div class="padding flex flex-col md:flex-row w-full items-center bg-black plus-jakarta-sans-200" style='gap:24px;'>
             <div class="relative rounded-lg">
                 <a href="#">
                     <img class="rounded-lg" src="../static/img/LostDimension.webp" alt="product image" />
@@ -35,6 +116,7 @@ md:text-yellow-400
                 <div class="z-10 absolute inset-x-0 bottom-0" style="left: 0px; right: 0px; bottom: 0px; padding: 16px">
                     <div class="flex items-center mb-5 justify-between">
                         <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
                             <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
                             <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
                             <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
@@ -60,6 +142,7 @@ md:text-yellow-400
                             <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
                             <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
                             <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <span class="text-xl text-white text-xs font-medium px-2.5 py-0.5 rounded ms-3">Adventure</span>
                     </div>
@@ -72,13 +155,296 @@ md:text-yellow-400
             </div>
 		</div>
 		<div class="w-full plus-jakarta-sans-200 bg-black">
-			<ul class="w-full flex flex-row justify-center font-medium px-4"> 
-				<li class='mx-4'><a href="#" class="rounded text-gray-500 hover:text-yellow-500 mx-4" aria-current="page">Documentary</a></li>
-				<li class='mx-4'><a href="#" class="rounded text-gray-300 hover:text-yellow-400 mx-4">Series</a></li>
-				<li class='mx-4'><a href="#" class="rounded text-white  hover:text-yellow-300 underline decoration-yellow-400 mx-4">Movies</a></li>
-				<li class='mx-4'><a href="#" class="rounded text-gray-300 hover:text-yellow-400 mx-4">Sports</a></li>
-				<li class='mx-4'><a href="#" class="rounded text-gray-500 hover:text-yellow-500 mx-4">Live</a></li>
+			<ul class="w-full flex flex-row justify-center font-medium" style="padding: 24px 0px;"> 
+				<li style="margin-left: 18px;"><a href="#" class="rounded text-gray-500 hover:text-yellow-500 mx-4" aria-current="page">Latest</a></li>
+				<li style="margin-left: 18px;"><a href="#" class="rounded text-gray-300 hover:text-yellow-400 mx-4">Series</a></li>
+				<li style="margin-left: 18px; border-bottom: gold solid 2px;"><a href="#" class="rounded text-white  hover:text-yellow-300 underline decoration-yellow-400 mx-4">Movies</a></li>
+				<li style="margin-left: 18px;"><a href="#" class="rounded text-gray-300 hover:text-yellow-400 mx-4">Sports</a></li>
+				<li style="margin-left: 18px;"><a href="#" class="rounded text-gray-500 hover:text-yellow-500 mx-4">Live</a></li>
 			</ul>
 		</div>
+        <div class="grid-container bg-black">
+            <div class="rounded-lg w-12">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/TheUmbrellaAcademy.webp" alt="The Umbrella Academy" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Umbrella Academy</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Action</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/HouseOfCards.webp" alt="White House" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">White House</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Drama</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/LoveDeathAndRobots.webp" alt="iRobot" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">iRobot</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Sci-fi</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/GambitoDeDama.webp" alt="Gambito De Dama" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Gambito De Dama</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Drama</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/Dark.webp" alt="Last Kiss" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Last Kiss</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Romance</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/BlackMirror.webp" alt="Dance Monkey" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Dance Monkey</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Musical</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/ArrestedDevelopment.webp" alt="Ted Lasso" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Ted Lasso</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Comedy</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/Narcos.webp" alt="Narcos" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Narcos</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Crime</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/BoojackHorseman.webp" alt="BoJack Horseman" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">BoJack Horseman</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gray;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Cartoon</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/MoneyHiest.webp" alt="Money Heist" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Money Heist</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Drama</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/PeakyBlinders.webp" alt="Peaky Blinders" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Peaky Blinders</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Drama</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg">
+                <a href="#">
+                    <img class="rounded-t-lg" src="../static/img/SquidGame.webp" alt="Squid Game" />
+                </a>
+                <div class="px-2.5 pb-5">
+                    <a href="#">
+                        <span class="title font-bold text-white">Squid Game</span>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-2">
+                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                            <i style="margin-right: 4px; color: gold;" class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h5 class="tag font-semibold tracking-tight text-white">Thriller</h5>
+                        <a href="#" class="tag font-bold inline-block bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-4 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-10 bg-black"></div>
+        <div class="w-full h-10 bg-black"></div>
+        <div class="w-full h-10 bg-black"></div>
+
 
 {% endblock %}
