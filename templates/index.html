@@ -4,13 +4,13 @@
     Home
 {% endblock %}
 
-{% block current_item %}
+{% block home_current %}
 md:text-yellow-400
 {% endblock %}
 
 {% block content %}
 
-        <div class="relative bg-gradient-to-r from-purple-600 to-blue-600 h-screen text-white overflow-hidden">
+        <div class="relative h-screen text-white overflow-hidden">
             <div class="absolute inset-0">
                 <img src="../static/img/hero.webp" alt="Background Image" class="object-cover object-center w-full h-full" />
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent from-70% to-black to-black-90%"></div>
@@ -18,7 +18,7 @@ md:text-yellow-400
             
             <div class="relative z-10 flex flex-col justify-center items-center h-full text-center antialiased">
                 <p class="tracking-widest font-semibold">WELCOME TO ENO TV</p>
-                <h1 class="text-5xl leading-tight mb-4">HOME OF <b>NON-STOP <br> ENTERTAINMENT</b></h1>
+                <h1 class="text-4xl md:text-5xl leading-tight mb-4">HOME OF <b>NON-STOP <br> ENTERTAINMENT</b></h1>
                 <a href="#" class="italic bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-md text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">WATCH FREE TRIAL</a>
             </div>
         </div>
