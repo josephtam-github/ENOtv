@@ -18,6 +18,10 @@ def signup_page():
 def browse_page():
     return render_template('browse.html')
 
+@app.route('/pricing')
+def pricing_page():
+    return render_template('pricing.html')
+
 @app.route('/movies/<moviename>')
 def watch_page():
     return render_template('movie.html')
