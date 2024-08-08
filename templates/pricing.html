@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Pricing
+{% endblock %}
+
+{% block pricing_current %}
+md:text-yellow-400
+{% endblock %}
+
+{% block stylesheet %}
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(21 1fr); /* Default: 1 column */
+        gap: 15px; 
+        padding: 0px 12px;
+    }
+    
+    @media (min-width: 375px) { /* Small screens */
+        .title {
+            font-size: 1.5rem;
+        }
+        .tag {
+            font-size: 1rem;
+        }
+        a.tag {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+    
+    @media (min-width: 768px) { /* Medium screens */
+        .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 20px;
+        padding-left: 36px;
+        padding-right: 36px;
+        }
+        .title {
+            font-size: 1.5rem;
+        }
+        .tag {
+            font-size: 1rem;
+        }
+        a.tag {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .padding {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+    }
+    
+    @media (min-width: 992px) { /* Large screens */
+        .grid-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        padding-left: 96px;
+        padding-right: 96px;
+        }
+        .padding {
+            padding-left: 96px;
+            padding-right: 96px;
+        }
+        .title {
+            font-size: 1.875rem;
+        }
+        .tag {
+            font-size: 1.125rem;
+        }
+    }
+
+</style>  
+{% endblock stylesheet%}
+
+{% block content %}
+
+        <div class="relative h-screen text-white overflow-scroll bg-black">
+            <div class="absolute inset-0">
+                <img src="../static/img/TheMandalorianBg.webp" alt="Background Image" class="object-cover object-center w-full h-full" />
+                <div class="absolute inset-0">
+                    <div class="w-full h-1/2 bg-gradient-to-b from-black from-0% to-tranparent to-transparent-20%"></div>
+                    <div class="w-full h-1/2 bg-gradient-to-b from-transparent from-0% to-black to-black-90%"></div>
+                </div>
+            </div>
+            
+            <div class="relative z-10 flex flex-col justify-center items-center h-full antialiased plus-jakarta-sans-200">
+                <div class="relative z-10 flex flex-col justify-center items-center h-full antialiased px-6">
+                    <h1 class="title font-medium mb-4 text-center">Choose from our flexible service plans, tailored to suit 
+                        your entertainment needs.</h1>
+                    <p class="tag text-center mb-6">Experience the best entertainment and content at competitive prices. <br>
+                        Select your plan and unlock a world of fun today.</p>
+
+                    <div class="grid-container mb-6">
+                        <div class="relative z-10 flex flex-col backdrop-blur border border-gray-400 p-4 border-opacity-50 rounded rounded-2xl">
+                            <div class="absolute inset-0 bg-black bg-opacity-50  rounded rounded-2xl"></div>
+                            <div class="relative z-30 flex flex-col">
+                                <p class="z-20 text-center text-xl font-bold mb-4">Basic</p>
+                                <ul style="border-top: silver solid 2px; padding: 12px 0px 12px 12px; list-style: disc; font-size: smaller;">
+                                    <li>12,000 TV channels from various providers.</li>
+                                    <li>Access to content from platforms like Netflix, Amazon Prime, Disney Plus, and more.</li>
+                                    <li>Standard streaming quality.</li>
+                                    <li>Ability to add content anytime.</li>
+                                    <li>Supported on your TV only</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex flex-col backdrop-blur border border-gray-400 p-4 border-opacity-50 rounded rounded-2xl">
+                            <div class="absolute inset-0 bg-black bg-opacity-50  rounded rounded-2xl"></div>
+                            <div class="relative z-30 flex flex-col">
+                                <p class="z-20 text-center text-xl font-bold mb-4">Standard</p>
+                                <ul style="border-top: silver solid 2px; padding: 12px 0px 12px 12px; list-style: disc; font-size: smaller;">
+                                    <li>25,000 TV channels from various providers.</li>
+                                    <li>Ability to add cLimited selection 
+                                        of 3D movies.ontent anytime.</li>
+                                    <li>High-definition (HD) streaming 
+                                        quality.</li>
+                                    <li>Ability to add content anytime.</li>
+                                    <li>Supported on your TV, computer, mobile phone, and tablet</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex flex-col backdrop-blur border border-gray-400 p-4 border-opacity-50 rounded rounded-2xl">
+                            <div class="absolute inset-0 bg-black bg-opacity-50  rounded rounded-2xl"></div>
+                            <div class="relative z-30 flex flex-col">
+                                <p class="z-20 text-center text-xl font-bold mb-4">Premium</p>
+                                <ul style="border-top: silver solid 2px; padding: 12px 0px 12px 12px; list-style: disc; font-size: smaller;">
+                                    <li>40,000 TV channels from various providers.</li>
+                                    <li>Access to content from platforms like Netflix, Amazon Prime, Disney Plus, and more.</li>
+                                    <li>Ultra HD streaming quality.</li>
+                                    <li>Extensive selection of 3D movies.</li>
+                                    <li>On-demand content available.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex flex-col backdrop-blur border border-gray-400 p-4 border-opacity-50 rounded rounded-2xl">
+                            <div class="absolute inset-0 bg-black bg-opacity-50  rounded rounded-2xl"></div>
+                            <div class="relative z-30 flex flex-col">
+                                <p class="z-20 text-center text-xl font-bold mb-4">Diamond</p>
+                                <ul style="border-top: silver solid 2px; padding: 12px 0px 12px 12px; list-style: disc; font-size: smaller;">
+                                    <li>50,000 TV channels from various providers.</li>
+                                    <li>Access to content from platforms like Netflix, Amazon Prime, Disney Plus, and more.</li>
+                                    <li>8K streaming quality.</li>
+                                    <li>Exclusive access to premium 
+                                        channels like Premier League, USA Network, 
+                                        FOX, and others.</li>
+                                    <li>Gifts like 3D glasses and more.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="italic bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-md text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">SUBSCRIBE NOW</a>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
